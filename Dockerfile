@@ -5,22 +5,22 @@ WORKDIR /usr/share/nginx/html/
 #RUN brook_new_ver=`wget -qO- https://github.com/txthinking/brook/tags| grep "/txthinking/brook/releases/tag/"| head -n 1| awk -F "/tag/" '{print $2}'| sed 's/\">//'` && \
 ENV VERSION	v20171113
 ENV HTTPDIR
-RUN  wget --no-check-certificate -O ${HTTPDIR}/brook.exe "https://github.com/txthinking/brook/releases/download/${VERSION}/brook.exe" \
-   &&
-   
-   chmod +x /usr/sbin/brook
 
-ENV execfile	/usr/sbin/httpd
-ENV protocol	server
-ENV serverlistenip 0.0.0.0:61089
-ENV clientlistenip 0.0.0.0:1080
-ENV clientip	127.0.0.1
-ENV password	pwd
-ENV OPTIONS	""
-ENV tcpDeadline	0
+#Down client file
+RUN  wget --no-check-certificate -O ${HTTPDIR}/brook.exe "https://github.com/txthinking/brook/releases/download/${VERSION}/brook.exe" && \
+           wget --no-check-certificate -O ${HTTPDIR}/Brook.white.exe "https://github.com/txthinking/brook/releases/download/${VERSION}/Brook.white.exe" && \
+           wget --no-check-certificate -O ${HTTPDIR}/Brook.386.exe "https://github.com/txthinking/brook/releases/download/${VERSION}/Brook.386.exe" && \
+           wget --no-check-certificate -O ${HTTPDIR}/Brook.386.white.exe "https://github.com/txthinking/brook/releases/download/${VERSION}/Brook.386.white.exe" && \
+           wget --no-check-certificate -O ${HTTPDIR}/Brook.apk "https://github.com/txthinking/brook/releases/download/${VERSION}/Brook.apk"
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+# Install packages.
+RUN apk --update add asciidoc && \
+    rm -rf /var/cache/apk/*
 
+COPE 
+for i in *.md; do asciidoc  $i;  done;
+	
+for i in /some/directory/*.md; do pandoc -f markdown -t html -s "$i" > "$i".html; done;
+
+CMD ["nginx", "-g", "daemon off;"]
