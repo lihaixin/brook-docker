@@ -1,9 +1,14 @@
-FROM alpine:3.7
+# USE for client down
+FROM nginx:stable-alpine
+WORKDIR /usr/share/nginx/html/
 
 #RUN brook_new_ver=`wget -qO- https://github.com/txthinking/brook/tags| grep "/txthinking/brook/releases/tag/"| head -n 1| awk -F "/tag/" '{print $2}'| sed 's/\">//'` && \
 ENV VERSION	v20171113
-RUN  wget --no-check-certificate -O /usr/sbin/brook "https://github.com/txthinking/brook/releases/download/${VERSION}/brook" \
-   && chmod +x /usr/sbin/brook
+ENV HTTPDIR
+RUN  wget --no-check-certificate -O ${HTTPDIR}/brook.exe "https://github.com/txthinking/brook/releases/download/${VERSION}/brook.exe" \
+   &&
+   
+   chmod +x /usr/sbin/brook
 
 ENV execfile	/usr/sbin/httpd
 ENV protocol	server
