@@ -18,9 +18,9 @@ RUN  wget --no-check-certificate -O ${HTTPDIR}/brook.exe "https://github.com/txt
 RUN apk --update add asciidoc && \
     rm -rf /var/cache/apk/*
 
-COPE 
-for i in *.md; do asciidoc  $i;  done;
-	
-for i in /some/directory/*.md; do pandoc -f markdown -t html -s "$i" > "$i".html; done;
+COPE README.md /usr/share/nginx/html/
+#for i in *.md; do asciidoc  $i;  done;
+#for i in /some/directory/*.md; do pandoc -f markdown -t html -s "$i" > "$i".html; done;
+RUN ["asciidoc","README.md"]
 
 CMD ["nginx", "-g", "daemon off;"]
