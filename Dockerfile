@@ -7,13 +7,13 @@ RUN  wget --no-check-certificate -O /usr/sbin/brook "https://github.com/txthinki
    && chmod +x /usr/sbin/brook
 
 ENV execfile	/usr/sbin/httpd
-ENV protocol	server
+ENV protocol	client
 ENV serverlistenip 0.0.0.0:61089
 ENV clientlistenip 0.0.0.0:1080
 ENV clientip	127.0.0.1
 ENV password	pwd
-ENV OPTIONS	""
 ENV tcpDeadline	0
+ENV OPTIONS	""
 
 ENV LIMIT_PORT 61089
 ENV LIMIT_CONN 20
