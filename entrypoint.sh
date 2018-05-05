@@ -1,6 +1,7 @@
 #!/bin/sh
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
+
 if [ ! -f "$execfile" ]; then
 	ln -s /usr/sbin/brook $execfile
 fi
