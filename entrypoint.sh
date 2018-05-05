@@ -6,5 +6,5 @@ if [ ! -f "$execfile" ]; then
 fi
 sleep 2
 
-$execfile $protocol --help
-$execfile $protocol --listen $clientlistenip --ip $clientip  --server $serverlistenip  --password $password $OPTIONS  
+$execfile client --help
+$execfile client --listen $clientlistenip --ip $clientip  --server $serverlistenip  --password $password $OPTIONS
