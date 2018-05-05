@@ -6,8 +6,8 @@ if [ ! -f "$execfile" ]; then
 	ln -s /usr/sbin/brook $execfile
 fi
 
-$execfile $protocol --help
-$execfile $protocol --listen ${serverlistenip}:${serverport} --password ${password} --tcpDeadline $tcpDeadline $OPTIONS > /dev/sdtout 2>&1 &
+$execfile server --help
+$execfile server --listen ${serverlistenip}:${serverport} --password ${password} --tcpDeadline $tcpDeadline $OPTIONS > /dev/sdtout 2>&1 &
 
 iptables -F
 iptables -A INPUT -p tcp -m state --state NEW --dport $serverport -m connlimit --connlimit-above $LIMIT_CONN -j DROP
