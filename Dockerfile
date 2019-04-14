@@ -7,19 +7,12 @@ RUN  wget --no-check-certificate -O /usr/sbin/brook "https://github.com/txthinki
    && chmod +x /usr/sbin/brook
 
 ENV execfile	/usr/sbin/httpd
-ENV serverlistenip 0.0.0.0
 ENV serverport 61089
-ENV clientip	127.0.0.1
 ENV password	pwd
 ENV OPTIONS	""
-ENV tcpDeadline	0
-
-# ENV LIMIT_PORT 61089
 ENV LIMIT_CONN 500
 ENV RATE 500mbit
-ENV BURST 100kb
-ENV LATENCY 50ms
-ENV INTERVAL 60
+
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
