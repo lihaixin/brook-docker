@@ -26,7 +26,13 @@ echo "地址 (Address) = ${ip}"
 echo
 echo "端口 (Port) = $serverport"
 echo
-echo "密码 (Password) = ${password}"
+echo "密码 (Password) = $password"
+echo
+echo "带宽（Bandwidch）= $RATE"
+echo
+echo "连接数（CONN）= $LIMIT_CONN"
+echo
+echo "给变量OPTIONS赋予-v开启调试模式"
 echo
 echo "---------- END -------------"
 echo
