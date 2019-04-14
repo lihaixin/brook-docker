@@ -7,8 +7,7 @@ if [ ! -f "$execfile" ]; then
 fi
 
 get_ip() {
-	ip=$DOMAIN
-	[[ -z $ip ]] && ip=$(curl -s https://ipinfo.io/ip)
+	ip=$(curl -s https://ipinfo.io/ip)
 	[[ -z $ip ]] && ip=$(curl -s https://api.ip.sb/ip)
 	[[ -z $ip ]] && ip=$(curl -s https://api.ipify.org)
 	[[ -z $ip ]] && ip=$(curl -s https://ip.seeip.org)
