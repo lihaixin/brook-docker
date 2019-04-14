@@ -43,4 +43,4 @@ $execfile server --listen 0.0.0.0:${serverport} --password ${password} --tcpDead
 iptables -F
 iptables -A INPUT -p tcp -m state --state NEW --dport $serverport -m connlimit --connlimit-above $LIMIT_CONN -j DROP
 tc qdisc add dev eth0 root tbf rate $RATE burst 100kb latency 50ms
-watch -n 60 tc -s qdisc ls dev eth0
+#watch -n 60 tc -s qdisc ls dev eth0
