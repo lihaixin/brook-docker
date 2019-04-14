@@ -2,7 +2,8 @@ FROM alpine:3.7
 LABEL name=brook
 #RUN brook_new_ver=`wget -qO- https://github.com/txthinking/brook/tags| grep "/txthinking/brook/releases/tag/"| head -n 1| awk -F "/tag/" '{print $2}'| sed 's/\">//'` && \
 ENV VERSION	v20190401
-RUN apk add -U iproute2 && ln -s /usr/lib/tc /lib/tc
+RUN apk add -U iproute2 curl && ln -s /usr/lib/tc /lib/tc \
+    && cp -r -f /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN  wget --no-check-certificate -O /usr/sbin/brook "https://github.com/txthinking/brook/releases/download/${VERSION}/brook" \
    && chmod +x /usr/sbin/brook
 
