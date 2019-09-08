@@ -3,7 +3,7 @@ FROM nginx:stable-alpine
 WORKDIR /usr/share/nginx/html/
 
 #RUN brook_new_ver=`wget -qO- https://github.com/txthinking/brook/tags| grep "/txthinking/brook/releases/tag/"| head -n 1| awk -F "/tag/" '{print $2}'| sed 's/\">//'` && \
-ENV VERSION	v20180401
+ENV VERSION	v20190601
 ENV HTTPDIR     /usr/share/nginx/html/
 
 
