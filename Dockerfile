@@ -14,7 +14,7 @@ ENV clientlistenip=0.0.0.0:1080
 ENV clientip=127.0.0.1
 ENV password=pwd
 ENV tcpDeadline=0
-ENV OPTIONS=""
+ENV OPTIONS="-d"
 
 
 COPY entrypoint.sh /entrypoint.sh
