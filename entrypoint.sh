@@ -45,4 +45,4 @@ tc qdisc add dev eth0 root tbf rate $RATE burst 100kb latency 50ms
 #watch -n 60 tc -s qdisc ls dev eth0
 
 #$execfile server --help
-$execfile server --listen 0.0.0.0:${serverport} --password ${password} --tcpDeadline 0 $OPTIONS > /dev/sdtout 2>&1
+$execfile $OPTIONS server --listen 0.0.0.0:${serverport} --password ${password} > /dev/sdtout 2>&1
