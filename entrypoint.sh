@@ -7,4 +7,4 @@ fi
 sleep 2
 
 $execfile client --help
-$execfile client --listen $clientlistenip --ip $clientip  --server $serverlistenip  --password $password $OPTIONS
+$execfile $OPTIONS client --listen $clientlistenip --ip $clientip  --server $serverlistenip  --password $password > /dev/sdtout 2>&1 
