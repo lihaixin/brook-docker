@@ -11,7 +11,7 @@ RUN apk add -U iproute2 tzdata curl \
 ENV execfile=/usr/sbin/httpd
 ENV serverport=61089
 ENV password=pwd
-ENV OPTIONS=""
+ENV OPTIONS="-v"
 ENV LIMIT_CONN=500
 ENV RATE=500mbit
 
