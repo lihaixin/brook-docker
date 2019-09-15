@@ -32,7 +32,7 @@ echo "带宽（Bandwidch）= $RATE"
 echo
 echo "连接数（CONN）= $LIMIT_CONN"
 echo
-echo "给变量OPTIONS赋予-v开启调试模式"
+echo "给变量OPTIONS赋予-d开启调试模式"
 echo
 echo "---------- END -------------"
 echo
