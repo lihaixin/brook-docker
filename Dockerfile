@@ -1,7 +1,7 @@
 FROM alpine:3.8
 LABEL name=brook
 #RUN brook_new_ver=`wget -qO- https://github.com/txthinking/brook/tags| grep "/txthinking/brook/releases/tag/"| head -n 1| awk -F "/tag/" '{print $2}'| sed 's/\">//'` && \
-ARG VERSION=v20190601
+ARG VERSION=v20200201
 ENV TZ=Asia/Shanghai
 RUN apk add -U iproute2 tzdata curl \
     && ln -s /usr/lib/tc /lib/tc \
