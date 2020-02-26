@@ -18,8 +18,8 @@ ENV HTTPDIR     /usr/share/nginx/html/
 ADD https://github.com/txthinking/brook/releases/download/${VERSION}/Brook.Setup.exe ${HTTPDIR}
 ADD https://github.com/txthinking/brook/releases/download/${VERSION}/Brook.apk ${HTTPDIR}
 ADD https://github.com/txthinking/brook/releases/download/${VERSION}/Brook.dmg ${HTTPDIR}
-ADD https://docs.google.com/document/export?format=pdf&id=1KrYAvh-RHhaKTHELOFEJO5c7H0dHkzU3AeALRxvC7zE ${HTTPDIR}
+ADD https://docs.google.com/document/export?format=html&id=1KrYAvh-RHhaKTHELOFEJO5c7H0dHkzU3AeALRxvC7zE ${HTTPDIR}
 ADD ./index.html /usr/share/nginx/html/
-RUN mv export brook使用指南.pdf && chmod 644 ./*
+RUN mv export brook使用指南.html && chmod 644 ./*
 
 CMD ["nginx", "-g", "daemon off;"]
