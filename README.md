@@ -1,7 +1,7 @@
 # brook使用指南
 
 ##  brook 介绍
-Brook 是一款新型的全平台(Linux/MacOS/Windows/Android/iOS) S5代理软件,目前使用效果不错
+[Brook](https://github.com/txthinking/brook) 是一款新型的全平台(Linux/MacOS/Windows/Android/iOS) S5代理软件,目前使用效果不错
 
 ## docker 服务器使用
 	docker run -d \
