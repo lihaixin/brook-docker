@@ -10,7 +10,7 @@ Brook 是一款新型的全平台(Linux/MacOS/Windows/Android/iOS) S5代理软�
                        -e RATE=10mbit \
                        --cap-add=NET_ADMIN \
 	               --name brook \
-	                lihaixin/brook
+	               lihaixin/brook
 	                
 可以使用portainer UI管理面版快速给员工创建
 
@@ -22,7 +22,7 @@ Brook 是一款新型的全平台(Linux/MacOS/Windows/Android/iOS) S5代理软�
 	               -e server=youserverip:port
 	               -e password=pwd \
 	               --name brook-client \
-	                lihaixin/brook
+	                lihaixin/brook:client
 	           
 	           
 ## 安卓客户端使用
